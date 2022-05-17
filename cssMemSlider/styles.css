@@ -79,6 +79,14 @@ input[name="radio"] {
 #radio_4:checked ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_4"].slide_navigate span {
     background-color: blueviolet;
 }
+#radio_1:checked ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_1"].slide_navigate:hover span,
+#radio_2:checked ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_2"].slide_navigate:hover span,
+#radio_3:checked ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_3"].slide_navigate:hover span,
+#radio_4:checked ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_4"].slide_navigate:hover span {
+    background-color: transparent;
+    border: .3rem solid blueviolet;
+    padding: 0.01rem;
+}
 
 #radio_1:active ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_1"].slide_navigate span,
 #radio_2:active ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_2"].slide_navigate span,
