@@ -1,0 +1,167 @@
+* {
+    outline: none !important;
+    margin: 0;
+    padding: 0;
+    transition: .3s !important;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+input[name="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.slider-wrap {
+    width: 38.75rem;
+    overflow: hidden;
+}
+
+.slider {
+    width: 400%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slide {
+    width: 25%;
+}
+
+.slide-first {
+    transform: translateX(-0%);
+}
+
+
+.slide-btn {
+    display: flex;
+    align-items: center;
+}
+.slide_navigate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: .1rem;
+    background-color: white;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.slide_navigate span {
+    display: block;
+    width: .5rem;
+    height: .5rem;
+    background-color: transparent;
+    border-radius: 100%;
+    border: .1rem solid black;
+    padding: .2rem;
+    transition: .5s !important;
+}
+.slide_navigate:hover span {
+    background-color: blue;
+}
+
+#radio_1:checked ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_1"].slide_navigate span,
+#radio_2:checked ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_2"].slide_navigate span,
+#radio_3:checked ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_3"].slide_navigate span,
+#radio_4:checked ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_4"].slide_navigate span {
+    background-color: blueviolet;
+}
+#radio_1:checked ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_1"].slide_navigate:hover span,
+#radio_2:checked ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_2"].slide_navigate:hover span,
+#radio_3:checked ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_3"].slide_navigate:hover span,
+#radio_4:checked ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_4"].slide_navigate:hover span {
+    background-color: transparent;
+    border: .3rem solid blueviolet;
+    padding: 0.01rem;
+}
+
+#radio_1:active ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_1"].slide_navigate span,
+#radio_2:active ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_2"].slide_navigate span,
+#radio_3:active ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_3"].slide_navigate span,
+#radio_4:active ~ .slider-wrap .bottom-bar .slide-btn label[for="radio_4"].slide_navigate span {
+    background-color: rgba(0, 0, 255, 0.521);
+    transform: scale(.6);
+    transition: .1s !important;
+}
+
+.bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: .9rem;
+}
+
+.subtitle {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 20rem;
+    overflow: hidden;
+}
+.subtitle > div {
+    width: 100%;
+}
+.subtitle > div > span {
+    display: block;
+    width: 20rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+#radio_1:checked ~ .slider-wrap .slider .slide-first {
+    margin-left: 0%;
+}
+#radio_2:checked ~ .slider-wrap .slider .slide-first {
+    margin-left: -25%;
+}
+#radio_3:checked ~ .slider-wrap .slider .slide-first {
+    margin-left: -50%;
+}
+#radio_4:checked ~ .slider-wrap .slider .slide-first {
+    margin-left: -75%;
+}
+
+#radio_1:checked ~ .slider-wrap .bottom-bar .subtitle .subtitle_text-fisrt {
+    margin-left: 0%;
+}
+#radio_2:checked ~ .slider-wrap .bottom-bar .subtitle .subtitle_text-fisrt {
+    margin-left: -100%;
+}
+#radio_3:checked ~ .slider-wrap .bottom-bar .subtitle .subtitle_text-fisrt {
+    margin-left: -200%;
+}
+#radio_4:checked ~ .slider-wrap .bottom-bar .subtitle .subtitle_text-fisrt {
+    margin-left: -300%;
+}
+
+@media (max-width: 992px) {
+    .bottom-bar {
+        flex-direction: column;
+    }
+    .subtitle {
+        align-self: flex-start;
+        order: 1;
+    }
+    .slide-btn {
+        margin-bottom: .7rem;
+    }
+    .slider-wrap {
+        max-width: 90%;
+    }
+    .subtitle > div > span {
+        font-size: 0.9rem;
+    }
+}
